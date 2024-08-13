@@ -1,0 +1,21 @@
+﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using CSMSBE.Core.Helper;
+
+namespace CSMS.Entity.IdentityAccess
+{
+    [Table(TableFieldNameHelper.IdentityExtentions.AspNetUserLogins, Schema = "authentication")]
+    public class UserLogin : IdentityUserLogin<string>
+    {
+        [Key]
+        public override string LoginProvider { set; get; }
+        public virtual User User { get; set; }
+    }
+}

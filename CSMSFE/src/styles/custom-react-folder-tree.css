@@ -1,0 +1,21 @@
+.displayName {
+    font-size: 14px;
+}
+
+.TreeNode {
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.AddFileIcon, .AddFolderIcon {
+    display: none;
+}
+
+.FolderTree {
+    width: max-content;
+}
+
+.custom-icon-resource {
+    width: 20px;
+}

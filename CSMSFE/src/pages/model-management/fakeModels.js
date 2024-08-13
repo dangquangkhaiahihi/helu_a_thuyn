@@ -1,0 +1,181 @@
+const fakeModel = [
+    {
+        id: 'M001',
+        name: 'Architectural Model',
+        level: 1,
+        description: 'Detailed architectural model of the community center.',
+        speckleBranchId: 'B001',
+        type: 'FOLDER',
+        projectId: '1',
+        projectName: 'Community Center Construction',
+        status: 'Approved',
+        parentId: null,
+        
+        createdBy: 'user123',
+        createdDate: '2023-01-20T08:30:00Z',
+        modifiedBy: 'user456',
+        modifiedDate: '2023-06-21T09:00:00Z'
+    },
+    {
+        id: 'M002',
+        name: 'Structural Model',
+        level: 2,
+        description: 'Structural design model for the water supply upgrade project.',
+        speckleBranchId: 'B002',
+        type: 'FOLDER',
+        projectId: '2',
+        projectName: 'Water Supply Upgrade',
+        status: 'Pending',
+        parentId: 'M001',
+
+        createdBy: 'user789',
+        createdDate: '2022-07-15T11:00:00Z',
+        modifiedBy: 'user123',
+        modifiedDate: '2023-03-16T10:00:00Z'
+    },
+    {
+        id: 'M003',
+        name: 'Renovation Plan Model',
+        level: 3,
+        description: 'Renovation plan model for the old school building.',
+        speckleBranchId: 'B003',
+        type: 'MODEL',
+        isUpload: false,
+        projectId: '3',
+        projectName: 'School Renovation',
+        status: 'In Progress',
+        parentId: 'M002',
+        
+        createdBy: 'user456',
+        createdDate: '2023-04-10T12:00:00Z',
+        modifiedBy: 'user789',
+        modifiedDate: '2023-07-19T15:00:00Z'
+    },
+    {
+        id: 'M004',
+        name: 'Healthcare Expansion Model',
+        level: 2,
+        description: 'Expansion model for the local healthcare center.',
+        speckleBranchId: 'B004',
+        type: 'MODEL',
+        isUpload: false,
+        projectId: '4',
+        projectName: 'Healthcare Center Expansion',
+        status: 'Review',
+        parentId: 'M001',
+        
+        createdBy: 'user111',
+        createdDate: '2023-02-25T10:00:00Z',
+        modifiedBy: 'user222',
+        modifiedDate: '2023-05-26T14:00:00Z'
+    },
+    {
+        id: 'M005',
+        name: 'Road Repair Model',
+        level: 2,
+        description: 'Model for repairing the main roads.',
+        speckleBranchId: 'B005',
+        type: 'MODEL',
+        isUpload: false,
+        projectId: '5',
+        projectName: 'Road Repair',
+        status: 'Completed',
+        parentId: 'M001',
+        
+        createdBy: 'user333',
+        createdDate: '2022-12-01T16:00:00Z',
+        modifiedBy: 'user444',
+        modifiedDate: '2023-01-11T17:00:00Z'
+    },
+    
+    {
+        id: 'M0010',
+        name: 'Architectural Model',
+        level: 1,
+        description: 'Detailed architectural model of the community center.',
+        speckleBranchId: 'B001',
+        type: 'FOLDER',
+        projectId: '1',
+        projectName: 'Community Center Construction',
+        status: 'Approved',
+        parentId: null,
+        
+        createdBy: 'user123',
+        createdDate: '2023-01-20T08:30:00Z',
+        modifiedBy: 'user456',
+        modifiedDate: '2023-06-21T09:00:00Z'
+    },
+    {
+        id: 'M0020',
+        name: 'Structural Model',
+        level: 2,
+        description: 'Structural design model for the water supply upgrade project.',
+        speckleBranchId: 'B002',
+        type: 'FOLDER',
+        projectId: '2',
+        projectName: 'Water Supply Upgrade',
+        status: 'Pending',
+        parentId: 'M0010',
+
+        createdBy: 'user789',
+        createdDate: '2022-07-15T11:00:00Z',
+        modifiedBy: 'user123',
+        modifiedDate: '2023-03-16T10:00:00Z'
+    },
+    {
+        id: 'M0030',
+        name: 'Renovation Plan Model',
+        level: 3,
+        description: 'Renovation plan model for the old school building.',
+        speckleBranchId: 'B003',
+        type: 'MODEL',
+        isUpload: true,
+        projectId: '3',
+        projectName: 'School Renovation',
+        status: 'In Progress',
+        parentId: 'M0020',
+        
+        createdBy: 'user456',
+        createdDate: '2023-04-10T12:00:00Z',
+        modifiedBy: 'user789',
+        modifiedDate: '2023-07-19T15:00:00Z'
+    },
+    {
+        id: 'M0040',
+        name: 'Healthcare Expansion Model',
+        level: 2,
+        description: 'Expansion model for the local healthcare center.',
+        speckleBranchId: 'B004',
+        type: 'MODEL',
+        isUpload: true,
+        projectId: '4',
+        projectName: 'Healthcare Center Expansion',
+        status: 'Review',
+        parentId: 'M0010',
+        
+        createdBy: 'user111',
+        createdDate: '2023-02-25T10:00:00Z',
+        modifiedBy: 'user222',
+        modifiedDate: '2023-05-26T14:00:00Z'
+    },
+    {
+        id: 'M0050',
+        name: 'Road Repair Model',
+        level: 2,
+        description: 'Model for repairing the main roads.',
+        speckleBranchId: 'B005',
+        type: 'MODEL',
+        isUpload: true,
+        projectId: '5',
+        projectName: 'Road Repair',
+        status: 'Completed',
+        parentId: 'M0010',
+        
+        createdBy: 'user333',
+        createdDate: '2022-12-01T16:00:00Z',
+        modifiedBy: 'user444',
+        modifiedDate: '2023-01-11T17:00:00Z'
+    },
+]
+
+export default fakeModel;

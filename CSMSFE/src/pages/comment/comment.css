@@ -1,0 +1,134 @@
+body {
+    background-color: #e9ebee;
+    color: #1d2129;
+}
+.comment-body {
+    width: 300px;
+    margin-top: 20px;
+}
+.single-comment {
+    /* padding: 0 0 0 12px; */
+    padding-left: 12px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    img {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background-image: url(https://pbs.twimg.com/media/F92aQENX0AAn-wa?format=jpg&name=medium);
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        alt: "This is image";
+    }
+
+    .single-container {
+        padding-left: 40px;
+        padding-right: 20px;
+
+        p {
+            font-size: 12px;
+            margin-left: 5px;
+
+            &:first-of-type {
+                cursor: pointer;
+                font-weight: bold;
+                color: #365899;
+                font-size: 12px;
+                margin: 0;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        button {
+            background-color: #365899;
+            color: #fff;
+            padding: 5px;
+            display: none;
+        }
+        button:hover {
+            display: inline-block;
+        }
+    }
+
+    .times {
+        margin-top: 0;
+        padding-left: 10px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        span {
+            display: inline-block;
+            color: #365899;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-top: 5px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:last-of-type {
+                color: #90949c;
+                cursor: auto;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.comment-section {
+    background-color: #f6f7f9;
+    margin: 0;
+}
+
+.input {
+    margin-top: 0;
+    background-color: #f6f7f9;
+    padding: 4px 12px 8px 12px;
+    margin-right: 20px;
+    width: 100%;
+    img {
+        width: 40px;
+        height: 40px;
+        background-image: url(https://pbs.twimg.com/profile_images/1665864657809096704/fdjOYn7Z_400x400.jpg);
+        background-size: cover;
+        background-position: center;
+        border: none;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    textarea {
+        background: #fff;
+        border: 1px solid #bdc7d8;
+        box-sizing: border-box;
+        cursor: text;
+        width: calc(100% - 40px);
+        margin-top: 2px;
+        margin-left: 50px;
+        padding: 7px;
+        font-family: helvetica;
+        outline: none;
+        resize: none;
+        overflow: hidden;
+        height: 32px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .button-add {
+        background-color: #365899;
+        color: #fff;
+        padding: 5px;
+    }
+    .button-icon {
+        color: #365899;
+    }
+}

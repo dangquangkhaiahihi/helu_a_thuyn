@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://unpkg.com/browse/web-ifc@0.0.51/web-ifc.wasm
+HostUrl=https://unpkg.com/web-ifc@0.0.51/web-ifc.wasm
