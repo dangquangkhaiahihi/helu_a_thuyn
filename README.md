@@ -21,6 +21,7 @@
 - Chạy BE bằng visual studio
 
 - Cài bun
+- Cài node version 18.19.0 (bằng nvm hay cài rời đều đc)
 - Chạy FE: cd CSMSFE => bun run dev (nếu chưa install thì chạy "bun install" trước)
 
 - Tài khoản mặc định để đăng nhập: admin@gmail.com - 123@123aA
