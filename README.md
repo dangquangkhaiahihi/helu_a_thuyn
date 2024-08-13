@@ -2,14 +2,25 @@
 
 - Chạy postgres và pgadmin của speckle trên Docker
 => connect pgadmin với postgres
-=> vào postgres thông qua pgadmin tạo DB csms (nếu chưa tạo)
-- Sử dụng connection string trong BE hiện tại
+
+- Các bước setup DB: 
+    + đứng ở root project => docker compose up -d
+    + mở pgadmin, đăng nhập bằng tkhoan admin@gmail.com - 123456
+    + ở sidebar của pgadmin => chuột phải vào "Servers" => "Register" => "Server"
+    + ở tab đầu: name gì cũng đc
+    + ở tab 2: 
+        * Hostname/address: postgres
+        * Port: 5432
+        * Maintenance DB: speckle
+        * Username: speckle
+        * Password: speckle
+
+- Chạy migration của BE:
+    + Bật terminal ở path "Project/CSMSBE/CSMSBE.Entity"
+    + Chạy lệnh: "dotnet ef database update"
 - Chạy BE bằng visual studio
+
+- Cài bun
 - Chạy FE: cd CSMSFE => bun run dev (nếu chưa install thì chạy "bun install" trước)
 
-
-- Hướng dẫn chạy migration để update DB:
-Bật terminal ở path "Project/CSMSBE/CSMSBE.Entity"
-Bật DB lên (docker) + Xóa DB "csms" cũ + Tạo DB "csms" trống
-Chạy lệnh: "dotnet ef database update"
-- Tài khoản mặc định: admin@gmail.com - 123@123aA
+- Tài khoản mặc định để đăng nhập: admin@gmail.com - 123@123aA
