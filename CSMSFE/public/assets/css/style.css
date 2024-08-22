@@ -1,4 +1,5 @@
 @media screen and (min-width: 400px) {
+
 	/* Tamaño del scroll */
 	::-webkit-scrollbar {
 		width: 14px;
@@ -52,4 +53,9 @@
 	::-webkit-scrollbar-button:vertical:single-button:increment:hover {
 		border-color: #1973e2 transparent transparent transparent;
 	}
+}
+
+.ck.ck-editor__main>.ck-editor__editable {
+	height: 200px;
+	overflow-y: auto;
 }

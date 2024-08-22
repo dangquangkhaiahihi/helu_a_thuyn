@@ -15,6 +15,9 @@ import BasicDatePickerInput from './date-picker-input';
 import BasicSelectInput from './select-input';
 import AsyncAutocomplete from './async-auto-complete-input';
 
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 interface BaseFormInputProps extends Omit<TextFieldProps, 'name' | 'error' | 'helperText'> {
   name: string;
   rules?: Record<string, any>;
@@ -23,7 +26,7 @@ interface BaseFormInputProps extends Omit<TextFieldProps, 'name' | 'error' | 'he
   dirtyFields?: Record<string, boolean>;
   element?: React.ElementType;
   children?: React.ReactNode;
-  sx? : any;
+  sx?: any;
   disabled?: boolean;
   accept?: any;
   hidehelpertext?: boolean;
@@ -31,8 +34,8 @@ interface BaseFormInputProps extends Omit<TextFieldProps, 'name' | 'error' | 'he
 
 interface DropdownSelectProps extends BaseFormInputProps {
   type: "select" |
-    "auto-complete" |
-    "auto-complete-multi-select";
+  "auto-complete" |
+  "auto-complete-multi-select";
   options: Array<{ value: string; label: string }>;
   fetchOptions?: never;
 }
@@ -44,7 +47,7 @@ interface AsyncDropdownSelectProps extends BaseFormInputProps {
 }
 
 interface OtherInputProps extends BaseFormInputProps {
-  type: "text" | "number" | "password" | "date" | "textarea" | "file";
+  type: "text" | "number" | "password" | "date" | "textarea" | "file" | "ckeditor";
   options?: never;
   fetchOptions?: never;
 }
@@ -70,7 +73,7 @@ const FormInput: React.FC<IFormInputProps> = (props) => {
   } = props;
 
   const renderInputBasedOnType = (field: ControllerRenderProps<any, string>) => {
-    
+
     switch (type) {
       case "date":
         return (
@@ -102,9 +105,9 @@ const FormInput: React.FC<IFormInputProps> = (props) => {
             multiple={type === 'auto-complete-multi-select'}
             options={options}
             getOptionLabel={(option) => option.label}
-            value={type === 'auto-complete' ? 
+            value={type === 'auto-complete' ?
               (options.find(option => option.value === field.value) || null) :
-              (field.value || []).map((val: string) => options.find(option => option.value === val) || {label: "Dữ liệu không tồn tại"})
+              (field.value || []).map((val: string) => options.find(option => option.value === val) || { label: "Dữ liệu không tồn tại" })
             }
             onChange={(_, data) => {
               if (type === 'auto-complete') {
@@ -115,11 +118,11 @@ const FormInput: React.FC<IFormInputProps> = (props) => {
             }}
             renderInput={(params) => (
               <TextField
-                  {...params}
-                  {...otherProps}
-                  name={name}
-                  error={!!errors?.[name]}
-                  helperText={(errors) ? (errors?.[name]?.message || ' ') : ''}
+                {...params}
+                {...otherProps}
+                name={name}
+                error={!!errors?.[name]}
+                helperText={(errors) ? (errors?.[name]?.message || ' ') : ''}
               />
             )}
           />
@@ -158,6 +161,17 @@ const FormInput: React.FC<IFormInputProps> = (props) => {
           >
             {children}
           </TextField>
+        )
+      case "ckeditor":
+        return (
+          <CKEditor
+            editor={ClassicEditor}
+            data={field.value}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              field.onChange(data);
+            }}
+          />
         )
       case "file":
         return (
@@ -207,7 +221,7 @@ const FormInput: React.FC<IFormInputProps> = (props) => {
         )
     }
   }
-  
+
   return (
     <Controller
       control={control}
@@ -218,7 +232,7 @@ const FormInput: React.FC<IFormInputProps> = (props) => {
           <InputLabel htmlFor={name}>
             {label}
           </InputLabel>
-          
+
           {renderInputBasedOnType(field)}
         </Box>
       )}
