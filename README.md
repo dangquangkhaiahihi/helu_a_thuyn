@@ -1,8 +1,5 @@
 # csms_g69
 
-- Chạy postgres và pgadmin của speckle trên Docker
-=> connect pgadmin với postgres
-
 - Các bước setup DB: 
     + đứng ở root project => docker compose up -d
     + mở pgadmin, đăng nhập bằng tkhoan admin@gmail.com - 123456
